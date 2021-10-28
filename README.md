@@ -1,7 +1,7 @@
 # Song playlist app
 A small demo on a song playlist app, illustrating the use of java
 linked lists.
-This is v
+
 
 
 
