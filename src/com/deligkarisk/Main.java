@@ -120,36 +120,30 @@ public class Main {
 
 
     private static Album makeIronMaidenAlbum() {
-        Song acesHigh = new Song("Aces high", "3:55");
-        Song rimeOfTheAncientMariner = new Song("Rime of the ancient mariner", "8:43");
-        Song powerslave = new Song("Powerslave", "4:38");
-        List<Song> ironMaidenList = new ArrayList<>();
-        ironMaidenList.add(acesHigh);
-        ironMaidenList.add(rimeOfTheAncientMariner);
-        ironMaidenList.add(powerslave);
-        return new Album(ironMaidenList);
+        Album ironMaidenAlbum = new Album("Iron Maiden Best Of", "Iron Maiden");
+        ironMaidenAlbum.addSong("Aces high", "3:55");
+        ironMaidenAlbum.addSong("Rime of the ancient mariner", "8:43");
+        ironMaidenAlbum.addSong("Powerslave", "4:38");
+
+        return ironMaidenAlbum;
     }
 
     private static Album makeIcedEarthAlbum() {
-        Song consequences = new Song("Consequences", "2:32");
-        Song watchingOverMe = new Song("Watching over me", "4:21");
-        Song dracula = new Song("Dracula", "4:29");
-        List<Song> icedEarthList = new ArrayList<>();
-        icedEarthList.add(consequences);
-        icedEarthList.add(watchingOverMe);
-        icedEarthList.add(dracula);
-        return new Album(icedEarthList);
+        Album icedEarthAlbum = new Album("Iced Earth Best Of", "Iced Earth");
+        icedEarthAlbum.addSong("Consequences", "2:32");
+        icedEarthAlbum.addSong("Watching over me", "4:21");
+        icedEarthAlbum.addSong("Dracula", "4:29");
+
+        return icedEarthAlbum;
     }
 
     private static Album makeRainbowAlbum() {
-        Song catchTheRainbow = new Song("Catch the rainbow", "3:55");
-        Song sinceYouHaveBeenGone = new Song("Since you have been gone", "5:29");
-        Song templeOfTheKing = new Song("Temple of the king", "3:23");
-        List<Song> rainbowList = new ArrayList<>();
-        rainbowList.add(catchTheRainbow);
-        rainbowList.add(sinceYouHaveBeenGone);
-        rainbowList.add(templeOfTheKing);
-        return new Album(rainbowList);
+        Album rainbowAlbum = new Album("Rainbow Best Of", "Rainbow");
+        rainbowAlbum.addSong("Catch the rainbow", "3:55");
+        rainbowAlbum.addSong("Since you have been gone", "5:29");
+        rainbowAlbum.addSong("Temple of the king", "3:23");
+
+        return rainbowAlbum;
     }
 
 
