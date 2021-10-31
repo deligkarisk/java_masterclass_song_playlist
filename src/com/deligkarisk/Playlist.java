@@ -26,6 +26,7 @@ public class Playlist {
         Optional<Album> optionalAlbum = albumCollection.findAlbum(album);
 
         if (optionalAlbum.isEmpty()) {
+            System.out.println("No such album.");
             return false;
         }
 
@@ -33,6 +34,7 @@ public class Playlist {
         Optional<Song> optionalSong = currentAlbum.findSong(songTitle);
 
         if (optionalSong.isEmpty()) {
+            System.out.println("No such song.");
             return false;
         }
 
