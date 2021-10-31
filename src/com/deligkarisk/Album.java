@@ -7,11 +7,11 @@ import java.util.Optional;
 public class Album {
 
     List<Song> albumSongs;
-    String name;
+    String title;
     String artist;
 
     public Album(String name, String artist) {
-        this.name = name;
+        this.title = name;
         this.artist = artist;
         this.albumSongs = new ArrayList<>();
     }
@@ -25,12 +25,16 @@ public class Album {
     }
 
 
-    private Optional<Song> findSong(String title) {
+    public Optional<Song> findSong(String title) {
         for (Song albumSong : albumSongs) {
             if (albumSong.getTitle().equals(title)) {
                 return Optional.of(albumSong);
             }
         }
         return Optional.empty();
+    }
+
+    public String getTitle() {
+        return title;
     }
 }

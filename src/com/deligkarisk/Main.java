@@ -4,27 +4,29 @@ import java.util.*;
 
 public class Main {
 
+    private static AlbumCollection albumCollection = new AlbumCollection();
+    private static Playlist playlist = new Playlist(albumCollection);
+
     public static void main(String[] args) {
 	// write your code here
-        Album ironMaidenBestOf = makeIronMaidenAlbum();
-        Album icedEarthBestOf = makeIcedEarthAlbum();
-        Album rainbowBestOf = makeRainbowAlbum();
 
-        List<Album> albums = new ArrayList<>();
 
-        List<Song> playlist = new LinkedList<>();
-        playlist.add(ironMaidenBestOf.albumSongs.get(0));
-        playlist.add(icedEarthBestOf.albumSongs.get(2));
-        playlist.add(icedEarthBestOf.albumSongs.get(0));
-        playlist.add(rainbowBestOf.albumSongs.get(1));
-        playlist.add(ironMaidenBestOf.albumSongs.get(1));
+        playlist.addSong("Iron Maiden Best Of","Rime of the ancient mariner");
+        playlist.addSong("Iced Earth Best Of","Dracula");
+        playlist.addSong("Iron Maiden Best Of","Powerslave" );
+        playlist.addSong("Rainbow Best Of","Catch the rainbow" );
+        playlist.addSong("Rainbow Best Of", "Temple of the king");
 
         play(playlist);
 
     }
 
 
-    private static void play(List<Song> playlist) {
+    private static void play(Playlist listToPlay) {
+
+        List<Song> playlist = listToPlay.getPlaylist();
+
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the playlist.");
         System.out.println("Enter a number:");
@@ -96,7 +98,7 @@ public class Main {
 
                 case 4:
                     for (Song song : playlist) {
-                        System.out.println(song.getTitle() + ", by " + song.getDuration());
+                        System.out.println(song.getTitle() + ", at " + song.getDuration());
                     }
                     break;
                 case 5:
@@ -108,43 +110,10 @@ public class Main {
 
         }
 
-
-
-
-
-
-
-
-
     }
 
 
-    private static Album makeIronMaidenAlbum() {
-        Album ironMaidenAlbum = new Album("Iron Maiden Best Of", "Iron Maiden");
-        ironMaidenAlbum.addSong("Aces high", "3:55");
-        ironMaidenAlbum.addSong("Rime of the ancient mariner", "8:43");
-        ironMaidenAlbum.addSong("Powerslave", "4:38");
 
-        return ironMaidenAlbum;
-    }
-
-    private static Album makeIcedEarthAlbum() {
-        Album icedEarthAlbum = new Album("Iced Earth Best Of", "Iced Earth");
-        icedEarthAlbum.addSong("Consequences", "2:32");
-        icedEarthAlbum.addSong("Watching over me", "4:21");
-        icedEarthAlbum.addSong("Dracula", "4:29");
-
-        return icedEarthAlbum;
-    }
-
-    private static Album makeRainbowAlbum() {
-        Album rainbowAlbum = new Album("Rainbow Best Of", "Rainbow");
-        rainbowAlbum.addSong("Catch the rainbow", "3:55");
-        rainbowAlbum.addSong("Since you have been gone", "5:29");
-        rainbowAlbum.addSong("Temple of the king", "3:23");
-
-        return rainbowAlbum;
-    }
 
 
 
